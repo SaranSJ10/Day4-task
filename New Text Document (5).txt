@@ -1,0 +1,243 @@
+1)
+A)
+Anonymous function
+const printOddNumbers = function(arr) {
+  arr.forEach((num) {
+    if (num % 2 !== 0) {
+      console.log(num);
+    }
+  });
+};
+
+IIFE
+(function(num){
+  arr.forEach((num) {
+    if (num % 2 !== 0) {
+      console.log(num);
+    }
+  });
+};) ();
+
+B)
+Anonymous function
+const titleCaseStrings = function(arr) {
+  return arr.map((str) {
+    return str.replace(/\w\S*/g, (txt) = {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  });
+};
+
+IIFE
+(function(arr) {
+  return arr.map((str) {
+    return str.replace(/\w\S*/g, (txt) = {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  });
+};) ();
+
+C)
+Anonymous function
+const sumArray = function(arr) {
+  return arr.reduce((total, num) = total + num, 0);
+};
+
+IIFE
+(function(arr) {
+  return arr.reduce((total, num) = total + num, 0);
+};) ();
+
+D)
+Anonymous function
+const isPrime = function(num) {
+  if (num <= 1) return false;
+  if (num <= 3) return true;
+  if (num % 2 === 0 || num % 3 === 0) return false;
+  
+  let i = 5;
+  while (i * i <= num) {
+    if (num % i === 0 || num % (i + 2) === 0) return false;
+    i += 6;
+  }
+  return true;
+};
+
+const getPrimeNumbers = function(arr) {
+  return arr.filter((num) = isPrime(num));
+};
+
+IIFE
+(function(num) {
+  if (num <= 1) return false;
+  if (num <= 3) return true;
+  if (num % 2 === 0 || num % 3 === 0) return false;
+  
+  let i = 5;
+  while (i * i <= num) {
+    if (num % i === 0 || num % (i + 2) === 0) return false;
+    i += 6;
+  }
+  return true;
+};
+
+const getPrimeNumbers = function(arr) {
+  return arr.filter((num) = isPrime(num));
+};) ();
+
+E)
+Anonymous function
+const isPalindrome = function(str) {
+  str = str.toLowerCase();
+  return str === str.split('').reverse().join('');
+};
+
+const getPalindromes = function(arr) {
+  return arr.filter((str) = isPalindrome(str));
+};
+
+IIFE
+(function(str) {
+  str = str.toLowerCase();
+  return str === str.split('').reverse().join('');
+};
+
+const getPalindromes = function(arr) {
+  return arr.filter((str) = isPalindrome(str));
+};) ();
+
+F)
+Anonymous function
+const findMedianSortedArrays = function(nums1, nums2){
+  const merged = [...nums1, ...nums2].sort((a, b) = a - b);
+  const mid = Math.floor(merged.length / 2);
+  if (merged.length % 2 === 0) {
+    return (merged[mid - 1] + merged[mid]) / 2;
+  } else {
+    return merged[mid];
+  }
+};
+
+IIFE
+(function(nums1, nums2){
+  const merged = [...nums1, ...nums2].sort((a, b) = a - b);
+  const mid = Math.floor(merged.length / 2);
+  if (merged.length % 2 === 0) {
+    return (merged[mid - 1] + merged[mid]) / 2;
+  } else {
+    return merged[mid];
+  }
+}) ();
+
+G)
+Anonymous function
+const removeDuplicates = function(arr) {
+  return [...new Set(arr)];
+};
+
+IIFE
+(function(arr) {
+  return [...new Set(arr)];
+};)();
+
+H)
+Anonymous function
+const rotateArray = function(arr, k) {
+  k %= arr.length;
+  reverse(arr, 0, arr.length - 1);
+  reverse(arr, 0, k - 1);
+  reverse(arr, k, arr.length - 1);
+};
+
+const reverse = function(arr, start, end) {
+  while (start < end) {
+    const temp = arr[start];
+    arr[start] = arr[end];
+    arr[end] = temp;
+    start++;
+    end--;
+  }
+
+IIFE
+(function(arr, k) {
+  k %= arr.length;
+  reverse(arr, 0, arr.length - 1);
+  reverse(arr, 0, k - 1);
+  reverse(arr, k, arr.length - 1);
+};)()
+
+(function(arr, start, end) {
+  while (start < end) {
+    const temp = arr[start];
+    arr[start] = arr[end];
+    arr[end] = temp;
+    start++;
+    end--;
+  })();
+
+
+2)
+
+A)
+const printOddNumbers = (arr) => {
+  arr.forEach((num) => {
+    if (num % 2 !== 0) {
+      console.log(num);
+    }
+  });
+};
+
+B)
+const titleCaseStrings = (arr) => {
+  return arr.map((str) => {
+    return str.replace(/\w\S*/g, (txt) => {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  });
+};
+
+c)
+const sumArray = (arr) => {
+  return arr.reduce((total, num) => total + num, 0);
+};
+
+D)
+const isPrime = (num) => {
+  if (num <= 1) return false;
+  if (num <= 3) return true;
+  if (num % 2 === 0 || num % 3 === 0) return false;
+  
+  let i = 5;
+  while (i * i <= num) {
+    if (num % i === 0 || num % (i + 2) === 0) return false;
+    i += 6;
+  }
+  return true;
+};
+
+const getPrimeNumbers = (arr) => {
+  return arr.filter((num) => isPrime(num));
+};
+
+E)
+const isPalindrome = (str) => {
+  str = str.toLowerCase();
+  return str === str.split('').reverse().join('');
+};
+
+const getPalindromes = (arr) => {
+  return arr.filter((str) => isPalindrome(str));
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
